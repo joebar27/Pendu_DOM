@@ -96,8 +96,11 @@ textarea {
 body {
   background-image: url(/./img/empty-blackboard-lite.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
-  
+}
+@media (min-width: 1900px) {
+  body {
+    background-size: 100% 100%;
+  }
 }
 /* font general of website*/
 * {
@@ -105,24 +108,48 @@ body {
   /* font-family: 'Permanent Marker', cursive; */
 }
 
+/*font-color chalk-white*/
 .ft-color-pri {
-  color: #6c757d;
+  color: #cdcdcd;
+  /* color: #6c757d; = text-muted */
 }
 
+/*font-color chalk-red*/
+.ft-color-sec {
+  color: #d1a3a1;
+}
+
+/*font-color chalk-yellow*/
+.ft-color-third {
+  color: #c6ba79;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
 /* ################################################## HEADER ########################################## */
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+/* logo */
+#logo {
+  width: 15%;
+  margin-left: 2em;
+}
+
+.nav-pills .nav-link.active {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  background-color: transparent;
+  background-image: url(/img/chalk-texture.png);
+  background-size: 100% 95%, contain;
+}
+
+.nav-link {
+  color: #d1a3a1;
 }
 
 @media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
+  
 }
 
 /* ################################################### MAIN ########################################### */
@@ -132,21 +159,10 @@ body {
 
 /* ################################################## FOOTER ########################################## */
 
-.b-example-divider {
-  height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+.text-muted {
+  font-size: 0.7em;
 }
 
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
-}
-.text-muted {
-  font-size: 1em;
-}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
