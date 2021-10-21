@@ -86,7 +86,67 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+/* font family qui sont charger dans la head :
+   font-family: 'Roboto', sans-serif;
+   font-family: 'Permanent Marker', cursive;
+   font-family: 'Rock Salt', cursive; 
+   */
+/* ############################################### GENERAL RULES ###################################### */
+/* Background image general*/
+body {
+  background-image: url(/./img/empty-blackboard-lite.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  
+}
+/* font general of website*/
+* {
+  font-family: 'Rock Salt', cursive;
+  /* font-family: 'Permanent Marker', cursive; */
+}
 
+.ft-color-pri {
+  color: #6c757d;
+}
+
+
+/* ################################################## HEADER ########################################## */
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+/* ################################################### MAIN ########################################### */
+
+
+
+
+/* ################################################## FOOTER ########################################## */
+
+.b-example-divider {
+  height: 3rem;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+.text-muted {
+  font-size: 1em;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -180,9 +240,9 @@ textarea {
 }
 
 @media print,
-  (-webkit-min-device-pixel-ratio: 1.25),
-  (min-resolution: 1.25dppx),
-  (min-resolution: 120dpi) {
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
   /* Style adjustments for high resolution devices */
 }
 
@@ -193,6 +253,7 @@ textarea {
    ========================================================================== */
 
 @media print {
+
   *,
   *::before,
   *::after {
@@ -209,11 +270,11 @@ textarea {
   }
 
   a[href]::after {
-    content: " (" attr(href) ")";
+    content: " ("attr(href) ")";
   }
 
   abbr[title]::after {
-    content: " (" attr(title) ")";
+    content: " ("attr(title) ")";
   }
 
   /*
@@ -260,4 +321,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
