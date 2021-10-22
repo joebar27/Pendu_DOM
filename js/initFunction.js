@@ -1,3 +1,62 @@
+// fonction du random
+const getRandomInt = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+  
+// Conversion des tableaus en majuscule
+function lowerToUpper(){
+    for (let word of wordsToUpperCase){
+        let toUpper = word.toLocaleUpperCase();
+        words.push(toUpper);        
+    }
+    return words;
+} 
+
+// fonction qui permet de choisir un mot de la liste au hazar
+const pickWord = () => {
+    const randomIndex = getRandomInt(0, words.length - 1);
+    return words[randomIndex];
+};
+
+// fonction pour la création du tableau de lettre du mot rechercher
+const getWordMapping = (word) => {
+    const wordArr = word.split('');
+    const wordMapping = wordArr.map((letter, index) => {
+        let isVisible = false;
+        if (index === 0 || index == wordArr.length - 1) {
+            isVisible = true;
+        }
+        return {
+            letter, 
+            isVisible
+        };
+    });
+    return wordMapping;
+};
+
+// fonction de génération du clavier de lettre
+const generateChoices = () => {
+    const choices = [];
+    for(let index = 65; index <= 90; index++) {
+        choices.push(String.fromCharCode(index));
+    }
+    return choices;
+};
+
+// fonction qui recupere la lettre choisi par l'utilisateur
+const getChoicesMapping = (choices) => {
+    const choicesMapping = choices.map((letter) => {
+        return {
+            letter,
+            isChosen: false
+        };
+    });
+    return choicesMapping;
+};
+
+//fonction de l'affichage de la lettre par l'utilisateur
 const displayChoices = (choicesMapping) => {
     const choicesHtml = choicesMapping.map((letterMapping) => {
         if (letterMapping.isChosen === false) {
@@ -9,11 +68,13 @@ const displayChoices = (choicesMapping) => {
     els.choices.querySelector('ul').innerHTML = choicesHtml.join('');
 };
 
+// fonction d'affichage du score restant avant la mort
 const displayScore = () => {
-    // els.score.innerHTML = `${scoreCount} / ${maxScore}`;
-    els.score.innerHTML = `<img src="img/pendu/0${scoreCount}.png" alt="hangman" />`;
+    // els.score.innerHTML = `${scoreCount} / ${maxScore}`;  <== version en donnée brut 
+    els.score.innerHTML = `<img src="img/pendu/0${scoreCount}.png" alt="hangman" />`; // version avec image du pendu
 };
 
+// fonction de remplacement des lettres par des underscores
 const displayWord = (wordMapping) => {
     const wordHtml = wordMapping.map((letterMapping) => {
         if (letterMapping.isVisible === true) {
@@ -26,44 +87,17 @@ const displayWord = (wordMapping) => {
     els.answer.querySelector('ul').innerHTML = wordHtml.join('');
 };
 
-const generateChoices = () => {
-    const choices = [];
-    for(let index = 65; index <= 90; index++) {
-        choices.push(String.fromCharCode(index));
-    }
-    return choices;
-};
+// fonction d'affichage de fin de partie
 
-const getChoicesMapping = (choices) => {
-    const choicesMapping = choices.map((letter) => {
-        return {
-            letter,
-            isChosen: false
-        };
-    });
-    return choicesMapping;
-};
-
-const getWordMapping = (word) => {
-    const wordArr = word.split('');
-    // console.log('word', word);
-    // console.log('wordArr', wordArr);
-    const wordMapping = wordArr.map((letter, index) => {
-        let isVisible = false;
-        if (index === 0 || index == wordArr.length - 1) {
-            isVisible = true;
-        }
-
-        return {
-            letter,
-            isVisible
-        };
-    });
-    return wordMapping;
-};
-
-const pickWord = () => {
-    const randomIndex = getRandomInt(0, words.length - 1);
-
-    return words[randomIndex];
-};
+// Si le score == maxscore: "tu est mort"
+const endGame = () => {
+    wordMapping.forEach(w => w.isVisible = true);
+    displayWord(wordMapping);
+    document.querySelector('body').style.backgroundColor = 'red';
+    els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12">Vous êtes mort !</h1>`;
+  };
+  
+  // si le mot est trouvé: "tu est libre"
+  const winGame = () => {
+    els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12">Courez!! vous êtes libre</h1>`;
+  }

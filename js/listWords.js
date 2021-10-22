@@ -1,6 +1,6 @@
 //----------------------DECLARATION DES TABLEAUX DE MOT-----------------------------------
 
-const words = ["stylo", "chien", "chat", "ordinateur", "verre", "chocolat", "bougie", "cahier", "anticonstitutionnellement", "Palourde", "Creux", "Faire", "Siècle", "Olive", "Comte", "Bluff", "Bronze",
+const wordsToUpperCase = ["stylo", "chien", "chat", "ordinateur", "verre", "chocolat", "bougie", "cahier", "anticonstitutionnellement", "Palourde", "Creux", "Faire", "Siècle", "Olive", "Comte", "Bluff", "Bronze",
   "Claustrophobie", "Amputer", "Somnambule", "Exercice", "Modifier", "Benne", "Longue", "Scientifique", "Tournesol", "Marginal", "Russie", "Esquimau", "Pouls", "Joyau", "Fondue", "Pipeline", "Pauvres", "Dent", "Fausser",
   "Analytique", "Hormones", "Dépression", "Dupliquer", "Urgence", "Concubines", "Bars", "Pieds", "Vol", "JeudiBordeaux", "Sourcils", "Oreille", "Ovale", "Beffroi", "Cintre", "Tube", "alade", "Saveur", "Boulangerie", "Swing",
   "Voler", "Pistolet", "Doublure", "Monstre", "Ventiler", "Baigner", "Pratique", "Objectifs", "Clavier", "Diamant", "Etriers", "Falsifier", "Cerceau", "Parieur", "Roues", "Coma", "Coeur", "Abdomen", "Doigt",
