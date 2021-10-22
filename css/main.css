@@ -153,8 +153,30 @@ ul {
 }
 
 /* ################################################### MAIN ########################################### */
+#choices li, #answer li {
+  display: inline-block;
+  margin: 15px;
+  padding: 15px;
+  font-size: 2em;
+}
 
+#choices li:hover {
+  cursor: grab;
+}
 
+#choices h1 {
+  font-size: 5em;
+  margin-top: 0;
+  margin-bottom: 15vh;
+}
+img {
+  margin: auto;  
+  width: 50%;
+}
+
+.disabled {
+  opacity: .3;
+}
 
 
 /* ################################################## FOOTER ########################################## */

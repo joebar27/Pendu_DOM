@@ -43,7 +43,7 @@ function chalkboard(){
         mouseY = touch.pageY;
         
         if (mouseY < height && mouseX < width) {
-            evt.preventDefault();
+            // evt.preventDefault();
             $('.chalk').css('left', mouseX + 'px');
             $('.chalk').css('top', mouseY + 'px');
             //$('.chalk').css('display', 'none');
