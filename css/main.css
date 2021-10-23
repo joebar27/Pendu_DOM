@@ -173,6 +173,10 @@ ul {
   color: #c6ba79;
 }
 
+#themes li:hover {
+  cursor: grab;
+}
+
 #choices li:hover {
   cursor: grab;
 }
