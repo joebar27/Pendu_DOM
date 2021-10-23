@@ -28,12 +28,12 @@
 </head>
 
 <body class="d-flex flex-column vh-100">
-  
+
   <!-- ################################################### HEADER ##################################################################### -->
   <header class="d-flex flex-wrap justify-content-center py-3 mb-5 border-bottom">
     <a href="/" class="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-lg-auto text-decoration-none">
-        <img id="logo"src="/img/logo-knot.png" alt="logo d'une potence avec sa corde">
-        <span class="fs-2 ms-3 ft-color-third">Le Pendu</span>
+      <img id="logo" src="/img/logo-knot.png" alt="logo d'une potence avec sa corde">
+      <span class="fs-2 ms-3 ft-color-third">Le Pendu</span>
     </a>
 
     <ul class="nav nav-pills justify-content-center align-items-center">
@@ -49,21 +49,24 @@
 
     <div id="score" class="d-flex col-lg-5">
       <!-- ici vient ce placer l'image du pendu ou le score -->
+      <!-- <img src="img/knot.png" alt=""> -->
     </div>
 
     <div id="wrapper" class="d-flex flex-column justify-content-around col-lg-7">
 
-        <div id="answer" class="ft-color-pri d-flex">
-            <ul class="d-flex col-lg-12 justify-content-center">
-              <!-- ici vient ce placer les lettres du mot choisi aléatoirement -->
-            </ul>
-        </div>
-
-        <div id="choices" class="ft-color-pri d-flex">
-            <ul class="d-flex flex-wrap justify-content-center col-lg-12">
-              <!-- ici vient ce placer les lettres du clavier générer -->
-            </ul>
-        </div>
+      <div id="answer" class="ft-color-pri d-flex">
+        <ul class="d-flex col-lg-12 justify-content-center">
+          <!-- ici vient ce placer les lettres du mot choisi aléatoirement -->
+        </ul>
+      </div>
+      <div id="themes" class="d-flex flex-wrap">
+        <!-- ici vient ce placer le choix des themes -->
+      </div>
+      <div id="choices" class="ft-color-pri d-flex">
+        <ul class="d-flex flex-wrap justify-content-center col-lg-12">
+          <!-- ici vient ce placer les lettres du clavier générer -->
+        </ul>
+      </div>
 
     </div>
     <!-- <button type="reset" class="col-lg-3">Rejouer ?</button> -->
@@ -71,29 +74,30 @@
   </main>
 
   <!-- ################################################### FOOTER ##################################################################### -->
-  <footer class="d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center py-3 mt-auto border-top">
+  <footer
+    class="d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center py-3 mt-auto border-top">
 
     <div class="d-flex align-items-center ms-sm-4">
-        <span class="text-muted">&copy; 2021 ANGER Romain, Fait pour l'AFPA</span>
+      <span class="text-muted">&copy; 2021 ANGER Romain, Fait pour l'AFPA</span>
     </div>
 
     <ul class="nav justify-content-end list-unstyled d-flex">
-        <li class="ms-3">
-            <a class="text-muted" href="#">
-                <i class="bi bi-facebook fs-3"></i>
-            </a>
-        </li>
-        <li class="ms-3">
-            <a class="text-muted" href="#">
-                <i class="bi bi-twitter fs-3"></i>
-            </a>
-        </li>
-        <li class="ms-3 me-0 me-md-5"><a class="text-muted" href="#">
-                <i class="bi bi-instagram fs-3"></i>
-            </a>
-        </li>
+      <li class="ms-3">
+        <a class="text-muted" href="#">
+          <i class="bi bi-facebook fs-3"></i>
+        </a>
+      </li>
+      <li class="ms-3">
+        <a class="text-muted" href="#">
+          <i class="bi bi-twitter fs-3"></i>
+        </a>
+      </li>
+      <li class="ms-3 me-0 me-md-5"><a class="text-muted" href="#">
+          <i class="bi bi-instagram fs-3"></i>
+        </a>
+      </li>
     </ul>
-</footer>
+  </footer>
 
 
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>

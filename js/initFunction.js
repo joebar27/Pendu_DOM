@@ -5,18 +5,31 @@ const getRandomInt = (min, max) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
   
-// Conversion des tableaus en majuscule
-function lowerToUpper(){
-    for (let word of wordsToUpperCase){
+// fonction du choix de la liste
+const displayChoseThemes = () => {
+    els.themes.innerHTML = `<h2 class="d-flex justify-content-center col-lg-12">Choisissez votre themes</h2>
+                        <div class="col-lg-12">
+                            <ul class="d-flex flex-wrap justify-content-center align-content-center col-lg-12">
+                                <li id="tous" class="d-flex col-8 justify-content-center">Tous les mots</li>
+                                <li id="animaux" class="d-flex col-8 justify-content-center">Les Animaux</li>
+                                <li id="prenom" class="d-flex col-8 justify-content-center">Les Prénoms</li>
+                            </ul>
+                        </div>`;
+};
+
+//Conversion des tableaus en majuscule
+const lowerToUpper = () => {
+    for (let word of listChosen){
         let toUpper = word.toLocaleUpperCase();
-        words.push(toUpper);        
+        words.push(toUpper);       
     }
     return words;
-} 
+};
 
 // fonction qui permet de choisir un mot de la liste au hazar
 const pickWord = () => {
     const randomIndex = getRandomInt(0, words.length - 1);
+    console.log(word);
     return words[randomIndex];
 };
 
@@ -93,11 +106,11 @@ const displayWord = (wordMapping) => {
 const endGame = () => {
     wordMapping.forEach(w => w.isVisible = true);
     displayWord(wordMapping);
-    document.querySelector('body').style.backgroundColor = 'red';
-    els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12">Vous êtes mort !</h1>`;
+    // document.querySelector('body').style.backgroundColor = 'red';
+    els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Vous êtes mort !</h1>`;
   };
   
   // si le mot est trouvé: "tu est libre"
   const winGame = () => {
-    els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12">Courez!! vous êtes libre</h1>`;
+    els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Courez!! vous êtes libre</h1>`;
   }

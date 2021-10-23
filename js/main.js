@@ -13,6 +13,7 @@ let choicesMapping = [];
 let scoreCount = 0;
 let maxScore = 8;
 let words = [];
+let listChosen = [];
 
 //initialisation et execution du jeu 
 const init = () => {
@@ -21,11 +22,35 @@ const init = () => {
   els.score = document.querySelector('#score');
   els.answer = document.querySelector('#answer');
   els.choices = document.querySelector('#choices');
+  els.themes = document.querySelector('#themes');
 
+  // affichage des choix de liste de mot
+  displayChoseThemes();
+  // choix de la liste de mot
+  els.themes.addEventListener('click', ({
+    target
+  }) => {
+    if (target.matches('#tous')) {
+      listChosen = wordsListTotal;
+      //   console.log(listChosen);
+      return listChosen;
+    } else if (target.matches('#animaux')) {
+      listChosen = wordsListAnimaux;
+      //   console.log(listChosen);
+      return listChosen;
+    } else if (target.matches('#prenom')) {
+      listChosen = wordsListPrenom;
+      //   console.log(listChosen);
+      return listChosen;
+    }
+  });
+  console.log(listChosen);
   // Transforme tout les mot en majuscule
   lowerToUpper();
   // choix du mot
+  console.log(words);
   word = pickWord();
+  console.log(word);
   // création du mot en liste de lettre
   wordMapping = getWordMapping(word);
   // Generation du choix de lettre
@@ -44,16 +69,16 @@ const init = () => {
   els.choices.addEventListener('click', ({
     target
   }) => {
-    // evt:MouseEvent evt.target => { target }
     if (target.matches('li')) {
       checkLetter(target.innerHTML);
     }
   });
 
   //    - keyboard events
-  document.addEventListener('keydown', ({keyCode}) => {
+  document.addEventListener('keydown', ({
+    keyCode
+  }) => {
     const letter = String.fromCharCode(keyCode);
-    // console.log('letter', letter);
     if (keyCode >= 65 && keyCode <= 90) {
       checkLetter(letter);
     }
@@ -99,6 +124,11 @@ const checkLetter = (letter) => {
     winGame();
   }
 };
+
+
+
+
+
 
 window.addEventListener('load', () => {
   init();

@@ -160,6 +160,19 @@ ul {
   font-size: 2em;
 }
 
+#themes h2 {
+  font-size: 3em;
+  color: #d1a3a1;
+}
+
+#themes li {
+  display: inline-block;
+  margin: 15px;
+  padding: 15px;
+  font-size: 2em;
+  color: #c6ba79;
+}
+
 #choices li:hover {
   cursor: grab;
 }
@@ -178,6 +191,9 @@ img {
   opacity: .3;
 }
 
+/* #corde {
+  width: 100%;
+} */
 
 /* ################################################## FOOTER ########################################## */
 
