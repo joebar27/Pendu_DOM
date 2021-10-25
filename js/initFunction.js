@@ -133,12 +133,12 @@ const endGame = () => {
   displayWord(wordMapping);
   // document.querySelector('body').style.backgroundColor = 'red';
   els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Vous êtes mort !</h1>
-                            <div id="rejoue"class="d-flex justify-content-center col-6">Rejouer ?</div>`;
+  <div id="rejoue"class="d-flex justify-content-center col-6">Rejouer ?</div>`;
   els.choices.addEventListener('click', ({
     target
   }) => {
     if (target.matches('#rejoue')) {
-      
+
       location.reload();
     }
   });
@@ -148,13 +148,13 @@ const endGame = () => {
 // si le mot est trouvé: "tu est libre"
 const winGame = () => {
   els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Courez!! vous êtes libre</h1>
-                            <button type="reset" name="reset" class="d-flex justify-content-center col-6">Rejouer ?</button>`;
+  <div id="rejoue"class="d-flex justify-content-center col-6">Rejouer ?</div>`;
 
   els.choices.addEventListener('click', ({
     target
   }) => {
     if (target.matches('#rejoue')) {
-      
+
       location.reload();
     }
   });
