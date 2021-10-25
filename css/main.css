@@ -190,8 +190,13 @@ ul {
   cursor: grab;
 }
 
-#choices li:hover {
+#choices li:hover, #rejoue:hover {
   cursor: grab;
+}
+
+#rejoue {
+  font-size: 1.2em;
+  color: #c6ba79;
 }
 
 #choices h1 {
@@ -222,7 +227,6 @@ img {
 
   #choices li,
   #answer li {
-    display: inline-block;
     margin: 15px;
     padding: 15px;
     font-size: 2em;
@@ -230,21 +234,21 @@ img {
 
   #themes h2 {
     font-size: 3em;
-    color: #d1a3a1;
   }
 
   #themes li {
-    display: inline-block;
     margin: 15px;
     padding: 15px;
     font-size: 2em;
-    color: #c6ba79;
   }
 
   #choices h1 {
     font-size: 5em;
-    margin-top: 0;
     margin-bottom: 10vh;
+  }
+
+  #rejoue {
+    font-size: 3em;
   }
 
   img {
