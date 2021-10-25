@@ -93,15 +93,25 @@ textarea {
    */
 /* ############################################### GENERAL RULES ###################################### */
 /* Background image general*/
+
 body {
+  margin: 0;
+  padding: 0;
   background-image: url(/./img/empty-blackboard-lite.jpg);
   background-repeat: no-repeat;
 }
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
 @media (min-width: 1900px) {
   body {
     background-size: 100% 100%;
   }
 }
+
 /* font general of website*/
 * {
   font-family: 'Rock Salt', cursive;
@@ -146,30 +156,33 @@ ul {
 
 .nav-link {
   color: #d1a3a1;
+  font-size: 0.8em;
 }
 
-@media (min-width: 768px) {
-  
+@media  screen and (min-width: 992px){
+  .nav-link {
+    font-size: 1.5em;
+  }
 }
-
 /* ################################################### MAIN ########################################### */
-#choices li, #answer li {
+#choices li,
+#answer li {
   display: inline-block;
-  margin: 15px;
-  padding: 15px;
-  font-size: 2em;
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
 }
 
 #themes h2 {
-  font-size: 3em;
+  font-size: 1.2em;
   color: #d1a3a1;
 }
 
 #themes li {
   display: inline-block;
-  margin: 15px;
-  padding: 15px;
-  font-size: 2em;
+  margin: 10px;
+  padding: 10px;
+  font-size: 1em;
   color: #c6ba79;
 }
 
@@ -182,22 +195,63 @@ ul {
 }
 
 #choices h1 {
-  font-size: 5em;
+  font-size: 1.5em;
   margin-top: 0;
-  margin-bottom: 15vh;
+  margin-bottom: 5vh;
 }
+
 img {
-  margin: auto;  
-  width: 40%;
+  margin: auto;
+  width: 100%;
 }
 
 .disabled {
   opacity: .3;
 }
 
-/* #corde {
-  width: 100%;
-} */
+.dispNone {
+  display: none;
+  /* opacity: 0; */
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~                                                screen LG                               ~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media screen and (min-width: 992px) {
+
+  #choices li,
+  #answer li {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    font-size: 2em;
+  }
+
+  #themes h2 {
+    font-size: 3em;
+    color: #d1a3a1;
+  }
+
+  #themes li {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    font-size: 2em;
+    color: #c6ba79;
+  }
+
+  #choices h1 {
+    font-size: 5em;
+    margin-top: 0;
+    margin-bottom: 10vh;
+  }
+
+  img {
+    margin: auto;
+    width: 40%;
+  }
+}
 
 /* ################################################## FOOTER ########################################## */
 

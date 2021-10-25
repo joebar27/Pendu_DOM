@@ -27,10 +27,10 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body class="d-flex flex-column vh-100">
+<body class="container-fluid d-flex flex-column vh-100 justify-content-center">
 
   <!-- ################################################### HEADER ##################################################################### -->
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-5 border-bottom">
+  <header class="d-flex flex-wrap justify-content-center p-3 mb-5 border-bottom">
     <a href="/" class="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-lg-auto text-decoration-none">
       <img id="logo" src="/img/logo-knot.png" alt="logo d'une potence avec sa corde">
       <span class="fs-2 ms-3 ft-color-third">Le Pendu</span>
@@ -39,37 +39,39 @@
     <ul class="nav nav-pills justify-content-center align-items-center">
       <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Le Jeu</a></li>
       <li class="nav-item"><a href="rules.html" class="nav-link">Les Règles</a></li>
-      <li class="nav-item"><a href="draw_chalk.html" class="nav-link">Dessine moi...</a></li>
+      <!-- <li class="nav-item"><a href="draw_chalk.html" class="nav-link">Dessine moi...</a></li> -->
       <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
     </ul>
   </header>
 
   <!-- ################################################### MAIN ##################################################################### -->
-  <main class="container-fluid vh-100 row">
+  <main class="container-fluid d-flex flex-wrap justify-content-center vh-100">
 
     <div id="score" class="d-flex col-lg-5">
       <!-- ici vient ce placer l'image du pendu ou le score -->
       <!-- <img src="img/knot.png" alt=""> -->
     </div>
 
-    <div id="wrapper" class="d-flex flex-column justify-content-around col-lg-7">
+    <div id="wrapper" class="d-flex flex-column justify-content-center col-12 col-lg-7">
 
-      <div id="answer" class="ft-color-pri d-flex">
-        <ul class="d-flex col-lg-12 justify-content-center">
-          <!-- ici vient ce placer les lettres du mot choisi aléatoirement -->
+      <div id="answer" class="ft-color-pri d-flex justify-content-center my-3 mb-lg-5">
+        <ul class="d-flex m-0 col-lg-12 justify-content-center">
+          <!-- ici vient ce placer les lettres du mot a trouver -->
         </ul>
       </div>
-      <div id="themes" class="d-flex flex-wrap">
+      <div id="themes" class="d-flex flex-column justify-content-center">
         <!-- ici vient ce placer le choix des themes -->
       </div>
-      <div id="choices" class="ft-color-pri d-flex">
+      <div id="choices" class="ft-color-pri d-flex flex-wrap justify-content-center">
         <ul class="d-flex flex-wrap justify-content-center col-lg-12">
           <!-- ici vient ce placer les lettres du clavier générer -->
+          <!-- ici vient ce placer la phrase gagné / perdu -->
+          <!-- ici vient ce placer le bouton de reset -->
         </ul>
       </div>
 
     </div>
-    <!-- <button type="reset" class="col-lg-3">Rejouer ?</button> -->
+    <!--  -->
 
   </main>
 

@@ -5,40 +5,43 @@ const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// fonction du choix de la liste
+// affichage du choix de la liste
 const displayChoseThemes = () => {
+  // els.answer.innerHTML = ``;
   els.themes.innerHTML = `<h2 class="d-flex justify-content-center col-lg-12">Choisissez votre themes</h2>
                         <div class="col-lg-12">
                             <ul class="d-flex flex-wrap justify-content-center align-content-center col-lg-12">
-                                <li id="tous" class="d-flex col-8 justify-content-center">Tous les mots</li>
-                                <li id="animaux" class="d-flex col-8 justify-content-center">Les Animaux</li>
-                                <li id="prenom" class="d-flex col-8 justify-content-center">Les Prénoms</li>
+                                <li id="tous" class="d-flex col-12 justify-content-center">Tous les mots</li>
+                                <li id="animaux" class="d-flex col-12 justify-content-center">Les Animaux</li>
+                                <li id="prenom" class="d-flex col-12 justify-content-center">Les Prénoms</li>
                             </ul>
                         </div>`;
 };
 
-// ecoute du choix du theme
-const choiceTheme = () => {
-    els.themes.addEventListener('click', ({target}) => {
-        if (target.matches('#tous')) {
-        themeChosen = wordsListTotal;
-        return themeChosen;
-        } else if (target.matches('#animaux')) {
-        themeChosen = wordsListAnimaux;
-        return themeChosen;
-        } else if (target.matches('#prenom')) {
-        themeChosen = wordsListPrenom;
-        return themeChosen;
-        }
-        console.log(themeChosen);
-    });
-    
-    // return themeChosen;
+//boucle du jeu complet apres choix du theme
+const gameStart = () => {
+  // effacement affichage du choix de themes
+  els.themes.classList.replace("d-flex", "dispNone");
+  // mise en majuscule le tableau de mot
+  lowerToUpper(wordsLower);
+  //selection du mot dans la liste
+  word = pickWord();
+  // création du mot en tableau de lettre
+  wordMapping = getWordMapping(word);
+  // Generation du choix de lettre
+  choices = generateChoices();
+  // recupération du choix de la lettre
+  choicesMapping = getChoicesMapping(choices);
+  // affichage du mot
+  displayWord(wordMapping);
+  // affichage du clavier de lettre
+  displayChoices(choicesMapping);
 }
 
 //Conversion des tableaus en majuscule
 const lowerToUpper = () => {
-  for (let word of themeChosen) {
+  words = [];
+  for (let word of wordsLower) {
     let toUpper = word.toLocaleUpperCase();
     words.push(toUpper);
   }
@@ -54,7 +57,6 @@ const pickWord = () => {
 // fonction pour la création du tableau de lettre du mot rechercher
 const getWordMapping = (word) => {
   const wordArr = word.split('');
-  console.log(wordArr);
   const wordMapping = wordArr.map((letter, index) => {
     let isVisible = false;
     if (index === 0 || index == wordArr.length - 1) {
@@ -88,7 +90,19 @@ const getChoicesMapping = (choices) => {
   return choicesMapping;
 };
 
-//fonction de l'affichage de la lettre par l'utilisateur
+// fonction de remplacement et d'affichage des lettres/underscores
+const displayWord = (wordMapping) => {
+  const wordHtml = wordMapping.map((letterMapping) => {
+    if (letterMapping.isVisible === true) {
+      return `<li>${letterMapping.letter}</li>`;
+    } else {
+      return `<li>_</li>`;
+    }
+  });
+  els.answer.querySelector('ul').innerHTML = wordHtml.join('');
+};
+
+//fonction de l'affichage de la lettre choisi par l'utilisateur
 const displayChoices = (choicesMapping) => {
   const choicesHtml = choicesMapping.map((letterMapping) => {
     if (letterMapping.isChosen === false) {
@@ -106,18 +120,10 @@ const displayScore = () => {
   els.score.innerHTML = `<img src="img/pendu/0${scoreCount}.png" alt="hangman" />`; // version avec image du pendu
 };
 
-// fonction de remplacement des lettres par des underscores
-const displayWord = (wordMapping) => {
-  const wordHtml = wordMapping.map((letterMapping) => {
-    if (letterMapping.isVisible === true) {
-      return `<li>${letterMapping.letter}</li>`;
-    } else {
-      return `<li>_</li>`;
-    }
-  });
 
-  els.answer.querySelector('ul').innerHTML = wordHtml.join('');
-};
+
+
+
 
 // fonction d'affichage de fin de partie
 
@@ -126,10 +132,30 @@ const endGame = () => {
   wordMapping.forEach(w => w.isVisible = true);
   displayWord(wordMapping);
   // document.querySelector('body').style.backgroundColor = 'red';
-  els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Vous êtes mort !</h1>`;
+  els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Vous êtes mort !</h1>
+                            <div id="rejoue"class="d-flex justify-content-center col-6">Rejouer ?</div>`;
+  els.choices.addEventListener('click', ({
+    target
+  }) => {
+    if (target.matches('#rejoue')) {
+      
+      location.reload();
+    }
+  });
+
 };
 
 // si le mot est trouvé: "tu est libre"
 const winGame = () => {
-  els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Courez!! vous êtes libre</h1>`;
-}
+  els.choices.innerHTML = `<h1 class="d-flex justify-content-center col-lg-12 ft-color-sec">Courez!! vous êtes libre</h1>
+                            <button type="reset" name="reset" class="d-flex justify-content-center col-6">Rejouer ?</button>`;
+
+  els.choices.addEventListener('click', ({
+    target
+  }) => {
+    if (target.matches('#rejoue')) {
+      
+      location.reload();
+    }
+  });
+};
