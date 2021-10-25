@@ -27,39 +27,63 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
-  
+<body class="container-fluid d-flex flex-column vh-100 justify-content-center">
+
   <!-- ################################################### HEADER ##################################################################### -->
-  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-      <!-- ajouter le logo d'un pendu -->
-      <!-- <svg class="bi me-2" width="40" height="32">
-        <use xlink:href="#bootstrap" />
-      </svg> -->
-      <span class="fs-2 ms-3 ft-color-pri">Le Pendu</span>
+  <header class="d-flex flex-wrap justify-content-center p-3 mb-5 border-bottom">
+    <a href="/" class="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-lg-auto text-decoration-none">
+      <img id="logo" src="/img/logo-knot.png" alt="logo d'une potence avec sa corde">
+      <span class="fs-2 ms-3 ft-color-third">Le Pendu</span>
     </a>
 
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills justify-content-center align-items-center">
       <li class="nav-item"><a href="index.html" class="nav-link active" aria-current="page">Le Jeu</a></li>
       <li class="nav-item"><a href="rules.html" class="nav-link">Les Règles</a></li>
-      <li class="nav-item"><a href="liste_mots.html" class="nav-link">Listes de mots</a></li>
+      <!-- <li class="nav-item"><a href="draw_chalk.html" class="nav-link">Dessine moi...</a></li> -->
       <li class="nav-item"><a href="faq.html" class="nav-link">FAQs</a></li>
     </ul>
   </header>
 
   <!-- ################################################### MAIN ##################################################################### -->
-  <main>
+  <main class="container-fluid d-flex flex-wrap justify-content-center vh-100">
+
+    <div id="score" class="d-flex col-lg-5">
+      <!-- ici vient ce placer l'image du pendu ou le score -->
+      <!-- <img src="img/knot.png" alt=""> -->
+    </div>
+
+    <div id="wrapper" class="d-flex flex-column justify-content-center col-12 col-lg-7">
+
+      <div id="answer" class="ft-color-pri d-flex justify-content-center my-3 mb-lg-5">
+        <ul class="d-flex m-0 col-lg-12 justify-content-center">
+          <!-- ici vient ce placer les lettres du mot a trouver -->
+        </ul>
+      </div>
+      <div id="themes" class="d-flex flex-column justify-content-center">
+        <!-- ici vient ce placer le choix des themes -->
+      </div>
+      <div id="choices" class="ft-color-pri d-flex flex-wrap justify-content-center">
+        <ul class="d-flex flex-wrap justify-content-center col-lg-12">
+          <!-- ici vient ce placer les lettres du clavier générer -->
+          <!-- ici vient ce placer la phrase gagné / perdu -->
+          <!-- ici vient ce placer le bouton de reset -->
+        </ul>
+      </div>
+
+    </div>
+    <!--  -->
 
   </main>
 
   <!-- ################################################### FOOTER ##################################################################### -->
-  <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+  <footer
+    class="d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center py-3 mt-auto border-top">
 
-    <div class="col-md-4 d-flex align-items-center">
+    <div class="d-flex align-items-center ms-sm-4">
       <span class="text-muted">&copy; 2021 ANGER Romain, Fait pour l'AFPA</span>
     </div>
 
-    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <ul class="nav justify-content-end list-unstyled d-flex">
       <li class="ms-3">
         <a class="text-muted" href="#">
           <i class="bi bi-facebook fs-3"></i>
@@ -70,8 +94,8 @@
           <i class="bi bi-twitter fs-3"></i>
         </a>
       </li>
-      <li class="ms-3"><a class="text-muted" href="#">
-        <i class="bi bi-instagram fs-3"></i>
+      <li class="ms-3 me-0 me-md-5"><a class="text-muted" href="#">
+          <i class="bi bi-instagram fs-3"></i>
         </a>
       </li>
     </ul>
@@ -83,6 +107,8 @@
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
   <script src="js/plugins.js"></script>
+  <script src="js/initFunction.js"></script>
+  <script src="js/listWords.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->

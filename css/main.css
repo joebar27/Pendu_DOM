@@ -93,60 +93,172 @@ textarea {
    */
 /* ############################################### GENERAL RULES ###################################### */
 /* Background image general*/
+
 body {
+  margin: 0;
+  padding: 0;
   background-image: url(/./img/empty-blackboard-lite.jpg);
   background-repeat: no-repeat;
-  background-size: 100%;
-  
 }
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+@media (min-width: 1900px) {
+  body {
+    background-size: 100% 100%;
+  }
+}
+
 /* font general of website*/
 * {
   font-family: 'Rock Salt', cursive;
   /* font-family: 'Permanent Marker', cursive; */
 }
 
+/*font-color chalk-white*/
 .ft-color-pri {
-  color: #6c757d;
+  color: #cdcdcd;
+  /* color: #6c757d; = text-muted */
 }
 
+/*font-color chalk-red*/
+.ft-color-sec {
+  color: #d1a3a1;
+}
+
+/*font-color chalk-yellow*/
+.ft-color-third {
+  color: #c6ba79;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 
 /* ################################################## HEADER ########################################## */
-.bd-placeholder-img {
-  font-size: 1.125rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
+/* logo */
+#logo {
+  width: 15%;
+  margin-left: 2em;
 }
 
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
+.nav-pills .nav-link.active {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  background-color: transparent;
+  background-image: url(/img/chalk-texture.png);
+  background-size: 100% 95%, contain;
+}
+
+.nav-link {
+  color: #d1a3a1;
+  font-size: 0.8em;
+}
+
+@media  screen and (min-width: 992px){
+  .nav-link {
+    font-size: 1.5em;
+  }
+}
+/* ################################################### MAIN ########################################### */
+#choices li,
+#answer li {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+#themes h2 {
+  font-size: 1.2em;
+  color: #d1a3a1;
+}
+
+#themes li {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  font-size: 1em;
+  color: #c6ba79;
+}
+
+#themes li:hover {
+  cursor: grab;
+}
+
+#choices li:hover {
+  cursor: grab;
+}
+
+#choices h1 {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 5vh;
+}
+
+img {
+  margin: auto;
+  width: 100%;
+}
+
+.disabled {
+  opacity: .3;
+}
+
+.dispNone {
+  display: none;
+  /* opacity: 0; */
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~                                                screen LG                               ~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media screen and (min-width: 992px) {
+
+  #choices li,
+  #answer li {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    font-size: 2em;
+  }
+
+  #themes h2 {
+    font-size: 3em;
+    color: #d1a3a1;
+  }
+
+  #themes li {
+    display: inline-block;
+    margin: 15px;
+    padding: 15px;
+    font-size: 2em;
+    color: #c6ba79;
+  }
+
+  #choices h1 {
+    font-size: 5em;
+    margin-top: 0;
+    margin-bottom: 10vh;
+  }
+
+  img {
+    margin: auto;
+    width: 40%;
   }
 }
 
-/* ################################################### MAIN ########################################### */
-
-
-
-
 /* ################################################## FOOTER ########################################## */
 
-.b-example-divider {
-  height: 3rem;
-  background-color: rgba(0, 0, 0, .1);
-  border: solid rgba(0, 0, 0, .15);
-  border-width: 1px 0;
-  box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+.text-muted {
+  font-size: 0.7em;
 }
 
-.bi {
-  vertical-align: -.125em;
-  fill: currentColor;
-}
-.text-muted {
-  font-size: 1em;
-}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

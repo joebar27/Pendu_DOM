@@ -27,42 +27,38 @@
     <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="d-flex flex-column vh-100">
 
     <!-- ################################################### HEADER ##################################################################### -->
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <!-- ajouter le logo d'un pendu -->
-            <!-- <svg class="bi me-2" width="40" height="32">
-        <use xlink:href="#bootstrap" />
-      </svg> -->
-            <span class="fs-2 ms-3 ft-color-pri">Le Pendu</span>
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-5 border-bottom">
+        <a href="/" class="d-flex justify-content-center align-items-center mb-3 mb-md-0 me-lg-auto text-decoration-none">
+            <img id="logo"src="/img/logo-knot.png" alt="logo d'une potence avec sa corde">
+            <span class="fs-2 ms-3 ft-color-third">Le Pendu</span>
         </a>
 
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills justify-content-center align-items-center">
             <li class="nav-item"><a href="index.html" class="nav-link" aria-current="page">Le Jeu</a></li>
             <li class="nav-item"><a href="rules.html" class="nav-link">Les Règles</a></li>
-            <li class="nav-item"><a href="liste_mots.html" class="nav-link">Listes de mots</a></li>
+            <!-- <li class="nav-item"><a href="draw_chalk.html" class="nav-link">Dessine moi...</a></li> -->
             <li class="nav-item"><a href="faq.html" class="nav-link active">FAQs</a></li>
         </ul>
     </header>
 
     <!-- ################################################### MAIN ##################################################################### -->
     <main>
-        <div>
-            <h4 class="ft-color-pri">Remerciement :</h4>
-            <a href='https://fr.freepik.com/photos/fond'>Fond photo créé par rawpixel.com - fr.freepik.com</a>
+        <div class="d-flex justify-content-center align-items-center">
+            <h4 class="ft-color-pri">pas encore trouver de question</h4>
         </div>
     </main>
 
     <!-- ################################################### FOOTER ##################################################################### -->
-    <footer class="d-flex flex-wrap justify-content-around align-items-center py-3 my-4 border-top">
+    <footer class="d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center py-3 mt-auto border-top">
 
-        <div class="col-md-4 d-flex align-items-center">
-            <span id="copyrigth" class="text-muted">&copy; 2021 ANGER Romain, Fait pour l'AFPA</span>
+        <div class="d-flex align-items-center ms-sm-4">
+            <span class="text-muted">&copy; 2021 ANGER Romain, Fait pour l'AFPA</span>
         </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+        <ul class="nav justify-content-end list-unstyled d-flex">
             <li class="ms-3">
                 <a class="text-muted" href="#">
                     <i class="bi bi-facebook fs-3"></i>
@@ -73,7 +69,7 @@
                     <i class="bi bi-twitter fs-3"></i>
                 </a>
             </li>
-            <li class="ms-3"><a class="text-muted" href="#">
+            <li class="ms-3 me-0 me-md-5"><a class="text-muted" href="#">
                     <i class="bi bi-instagram fs-3"></i>
                 </a>
             </li>
@@ -86,7 +82,8 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/faq.js"></script>
+    
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
