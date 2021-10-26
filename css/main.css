@@ -97,7 +97,7 @@ textarea {
 body {
   margin: 0;
   padding: 0;
-  background-image: url(/img/empty-blackboard-lite.jpg);
+  background-image: url(../img/empty-blackboard-lite.jpg);
   background-repeat: no-repeat;
 }
 
@@ -150,7 +150,7 @@ ul {
   color: rgb(0, 0, 0);
   font-weight: bold;
   background-color: transparent;
-  background-image: url(/img/chalk-texture.png);
+  background-image: url(../img/chalk-texture.png);
   background-size: 100% 95%, contain;
 }
 
